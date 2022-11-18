@@ -6,7 +6,5 @@
 <br />
 <input type="text" name="message" [(ngModel)]="message" autocomplete="off" />
 <br />
-<input type="text" name="content" [(ngModel)]="content" autocomplete="off" />
-
-<br />
-<br />
+<br>
+<app-changes-child [myValProp]="message"></app-changes-child>

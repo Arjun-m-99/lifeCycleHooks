@@ -1,22 +1,24 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges {
   title = 'lifeCycleHooks';
   name = "Angular " + VERSION.major;
-  message = "Hello";
+  message= "Type here";
   content = "Hello";
+  propChanges: any;
 
   constructor() {
     console.log("AppComponent:Contructed");
   }
 
-  ngOnChanges() {
-    console.log("AppComponent:ngOnChanges");
+  ngOnChanges(changes: SimpleChanges) {
+    this.propChanges = changes;
+    console.log(this.propChanges);
   }
 
   ngOnInit() {
@@ -28,19 +30,19 @@ export class AppComponent {
   }
 
   ngDoCheck() {
-    console.log("AppComponent:DoCheck");
+    console.log("AppComponent:ngDoCheck");
   }
 
   ngAfterContentChecked() {
-    console.log("AppComponent:AfterContentChecked");
+    console.log("AppComponent:ngAfterContentChecked");
   }
 
   ngAfterViewInit() {
-    console.log("AppComponent:AfterViewInit");
+    console.log("AppComponent:ngAfterViewInit");
   }
 
   ngAfterViewChecked() {
-    console.log("AppComponent:AfterViewChecked");
+    console.log("AppComponent:ngAfterViewChecked");
   }
 
   ngOnDestroy() {
