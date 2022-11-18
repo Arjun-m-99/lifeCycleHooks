@@ -10,15 +10,46 @@ export class ChangesChildComponent implements OnInit {
   @Input() myValProp!: string;
   propChanges: any;
 
-  constructor() { }
+  constructor() {
+    console.log("ChildComponent: Constructor");
+  }
 
   ngOnInit(): void {
+    console.log("ChildComponent: ngOnInIt");
+
+  }
+
+  ngDoCheck() {
+    console.log("ChildComponent: ngDoCheck");
+
+  }
+
+  ngAfterContentInIt() {
+    console.log("ChildComponent: contentInIt");
+  }
+
+  ngAfterContentChecked() {
+    console.log("ChildComponent: AfterCOntentChecked");
+
+  }
+
+  ngAfterViewInit() {
+    console.log("ChildComponent: AfterViewInIt");
+  }
+
+  ngAfterViewChecked() {
+    console.log("ChildComponent: AfterViewChecked");
+  }
+
+  ngOnDestroy() {
+    console.log('ChildComponent:OnDestroy');
+  
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log("AppComponent:ngOnChanges");
+    console.log("ChildComponent:ngOnChanges");
     this.propChanges = changes;
-    console.log(this.propChanges);
+    // console.log(this.propChanges);
   }
 
 }

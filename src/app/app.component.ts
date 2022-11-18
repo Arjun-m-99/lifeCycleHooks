@@ -11,9 +11,14 @@ export class AppComponent implements OnChanges {
   message= "Type here";
   content = "Hello";
   propChanges: any;
+  displayChild = true;
 
   constructor() {
     console.log("AppComponent:Contructed");
+  }
+
+  toggle() {
+    this.displayChild = !this.displayChild;
   }
 
   ngOnChanges(changes: SimpleChanges) {

@@ -6,5 +6,6 @@
 <br />
 <input type="text" name="message" [(ngModel)]="message" autocomplete="off" />
 <br />
+<button (click)="toggle()">Hide/Show Child </button>
 <br>
-<app-changes-child [myValProp]="message"></app-changes-child>
+<app-changes-child *ngIf="displayChild" [myValProp]="message"></app-changes-child>
